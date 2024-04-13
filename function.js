@@ -142,35 +142,51 @@ window.function = function (html, fileName, format, zoom, orientation, margin, b
 	  </div>
 	  <script>
 	  document.getElementById('download').addEventListener('click', function() {
-		var element = document.getElementById('content');
-		var button = this;
-		button.innerText = 'Downloading...';
-		button.className = 'downloading';
-  
-		var opt = {
-		pagebreak: { mode: ['css'], before: ${JSON.stringify(breakBefore)}, after: ${JSON.stringify(breakAfter)}, avoid: ${JSON.stringify(breakAvoid)} },
-		margin: ${margin},
-		filename: '${fileName}',
-		html2canvas: {
-		  useCORS: true,
-		  scale: ${quality}
-		},
-		jsPDF: {
-		  unit: 'px',
-		  orientation: '${orientation}',
-		  format: [${finalDimensions}],
-		  hotfixes: ['px_scaling']
-		}
-		};
-		html2pdf().set(opt).from(element).toPdf().get('pdf').then(function(pdf) {
-		button.innerText = 'Done 🎉';
-		button.className = 'done';
-		setTimeout(function() { 
-		  button.innerText = 'Download';
-		  button.className = ''; 
-		}, 2000);
-		}).save();
-	  });
+  var element = document.getElementById('content');
+  var button = this;
+  button.innerText = 'Downloading...';
+  button.className = 'downloading';
+
+  var opt = {
+    pagebreak: { mode: ['css'], before: JSON.stringify(breakBefore), after: JSON.stringify(breakAfter), avoid: JSON.stringify(breakAvoid) },
+    margin: margin,
+    filename: fileName,
+    html2canvas: {
+      useCORS: true,
+      scale: quality
+    },
+    jsPDF: {
+      unit: 'px',
+      orientation: orientation,
+      format: [finalDimensions],
+      hotfixes: ['px_scaling']
+    }
+  };
+
+  html2pdf().set(opt).from(element).toPdf().get('pdf').then(function(pdf) {
+    var blob = pdf.output('blob');
+    var url = window.URL.createObjectURL(blob);
+    
+    // Create a link and trigger the download
+    var a = document.createElement('a');
+    a.href = url;
+    a.download = fileName; // This should be the filename you want
+    document.body.appendChild(a);
+    a.click();
+    
+    // Clean up
+    document.body.removeChild(a);
+    window.URL.revokeObjectURL(url);
+
+    // Update button state
+    button.innerText = 'Done 🎉';
+    button.className = 'done';
+    setTimeout(function() { 
+      button.innerText = 'Download';
+      button.className = ''; 
+    }, 2000);
+  });
+});
 	  </script>
 	  `;
 	var encodedHtml = encodeURIComponent(originalHTML);
