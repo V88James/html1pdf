@@ -59,6 +59,31 @@
 				"name": "customDimensions",
 				"displayName": "Custom Dimensions (e.g: 300,300)",
 				"type": "string"
+			},
+			{
+				"name": "buttonPosition",
+				"displayName": "Horizontal Button Position (e.g: right, left)",
+				"type": "string"
+			},
+			{
+				"name": "buttonBg",
+				"displayName": "Button Background Colour (e.g: red, #ffffff)",
+				"type": "string"
+			},
+			{
+				"name": "buttonBgHover",
+				"displayName": "Hover Over Button Background Colour (e.g: red, #ffffff)",
+				"type": "string"
+			},
+			{
+				"name": "buttonBgDownloading",
+				"displayName": "Downloading Button Background Colour (e.g: red, #ffffff)",
+				"type": "string"
+			},
+			{
+				"name": "buttonBgDone",
+				"displayName": "Donwload Done Button Background Colour (e.g: red, #ffffff)",
+				"type": "string"
 			}
 		],
 		"result": {
