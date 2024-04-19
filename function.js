@@ -96,7 +96,7 @@ window.function = function (html, fileName, format, zoom, orientation, margin, b
 	  line-height: 1.5rem;
 	  color: #0d0d0d;
 	  border: none;
-	  font-family: 'Inter';
+	  font-family: 'Arial, sans-serif';
 	  padding: 0px 12px;
 	  height: 32px;
 	  background: #ffffff;
@@ -112,11 +112,11 @@ window.function = function (html, fileName, format, zoom, orientation, margin, b
 	}
   
 	button#download.downloading {
-	  color: #ea580c;
+	  color: #FF3F69;
 	}
   
 	button#download.done {
-	  color: #16a34a;
+	  color: #00AC8E;
 	}
   
 	::-webkit-scrollbar {
