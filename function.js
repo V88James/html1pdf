@@ -1,4 +1,4 @@
-window.function = function (html, fileName, format, zoom, orientation, margin, breakBefore, breakAfter, breakAvoid, fidelity, customDimensions) {
+window.function = function (html, fileName, format, zoom, orientation, margin, breakBefore, breakAfter, breakAvoid, fidelity, customDimensions, buttonPosition, buttonBg, buttonBgHover, buttonBgDownloading, buttonBgDone) {
 	// FIDELITY MAPPING
 	const fidelityMap = {
 		low: 1,
@@ -18,6 +18,13 @@ window.function = function (html, fileName, format, zoom, orientation, margin, b
 	breakAvoid = breakAvoid.value ? breakAvoid.value.split(",") : [];
 	quality = fidelityMap[fidelity.value] ?? 1.5;
 	customDimensions = customDimensions.value ? customDimensions.value.split(",").map(Number) : null;
+	buttonPosition = buttonPosition.value ?? "right";
+	buttonBg = buttonBg.value ?? "#ffffff";
+	buttonBgHover = buttonBgHover.value ?? "#f5f5f5";
+	buttonBgDownloading = buttonBgDownloading.value ?? "#FF3F69";
+	buttonBgDone = buttonBgDone.value ?? "#00AC8E";
+	
+
 
 	// DOCUMENT DIMENSIONS
 	const formatDimensions = {
@@ -89,7 +96,7 @@ window.function = function (html, fileName, format, zoom, orientation, margin, b
 	}
   
 	button#download {
-	  /* position: fixed; */
+	  position: fixed;
 	  border-radius: 0.5rem;
 	  font-size: 14px;
 	  font-weight: 600;
@@ -99,24 +106,24 @@ window.function = function (html, fileName, format, zoom, orientation, margin, b
 	  font-family: Arial, sans-serif !important;
 	  padding: 0px 12px;
 	  height: 32px;
-	  background: #ffffff;
+	  background: ${buttonBg};
 	  top: 8px;
-	  right: 8px;
+	  ${buttonPosition}: 8px;
 	  box-shadow: 0 0 0 0.5px rgba(0, 0, 0, 0.08), 0 1px 2.5px rgba(0, 0, 0, 0.1);
 	  cursor: pointer;
 	}
   
 	button#download:hover {
-	  background: #f5f5f5;
+	  background: ${buttonBgHover};
 	  box-shadow: 0 0 0 0.5px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.06), 0 6px 12px -3px rgba(0, 0, 0, 0.1);
 	}
   
 	button#download.downloading {
-	  color: #FF3F69;
+	  color: ${buttonBgDownloading};
 	}
   
 	button#download.done {
-	  color: #00AC8E;
+	  color: ${buttonBgDone};
 	}
   
 	::-webkit-scrollbar {
