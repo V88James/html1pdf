@@ -1,4 +1,4 @@
-window.function = function (html, fileName, format, zoom, orientation, margin, breakBefore, breakAfter, breakAvoid, fidelity, customDimensions, buttonPosition, buttonBg, buttonBgHover, buttonBgDownloading, buttonBgDone) {
+window.function = function (html, fileName, format, zoom, orientation, margin, breakBefore, breakAfter, breakAvoid, fidelity, customDimensions, buttonPosition, buttonBg, buttonBgHover, buttonFontColourDownloading, buttonFontColourDone) {
 	// FIDELITY MAPPING
 	const fidelityMap = {
 		low: 1,
@@ -21,8 +21,8 @@ window.function = function (html, fileName, format, zoom, orientation, margin, b
 	buttonPosition = buttonPosition.value ?? "right";
 	buttonBg = buttonBg.value ?? "#ffffff";
 	buttonBgHover = buttonBgHover.value ?? "#f5f5f5";
-	buttonBgDownloading = buttonBgDownloading.value ?? "#FF3F69";
-	buttonBgDone = buttonBgDone.value ?? "#00AC8E";
+	buttonFontColourDownloading = buttonFontColourDownloading.value ?? "#FF3F69";
+	buttonFontColourDone = buttonFontColourDone.value ?? "#00AC8E";
 	
 
 
@@ -119,11 +119,11 @@ window.function = function (html, fileName, format, zoom, orientation, margin, b
 	}
   
 	button#download.downloading {
-	  color: ${buttonBgDownloading};
+	  color: ${buttonFontColourDownloading};
 	}
   
 	button#download.done {
-	  color: ${buttonBgDone};
+	  color: ${buttonFontColourDone};
 	}
   
 	::-webkit-scrollbar {
