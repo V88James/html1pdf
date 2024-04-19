@@ -76,13 +76,13 @@
 				"type": "string"
 			},
 			{
-				"name": "buttonBgDownloading",
-				"displayName": "Downloading Button Background Colour (e.g: red, #ffffff)",
+				"name": "buttonFontColourDownloading",
+				"displayName": "Downloading Button Font Colour (e.g: red, #ffffff)",
 				"type": "string"
 			},
 			{
-				"name": "buttonBgDone",
-				"displayName": "Donwload Done Button Background Colour (e.g: red, #ffffff)",
+				"name": "buttonFontColourDone",
+				"displayName": "Download Done Button Font Colour (e.g: red, #ffffff)",
 				"type": "string"
 			}
 		],
