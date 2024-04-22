@@ -143,7 +143,7 @@ window.function = function (html, fileName, format, zoom, orientation, margin, b
 	  <div class="header">
 		<button class="button" id="download">Download</button>
 	  </div>
-	  <div id="content">${v88-styles}${v88-scripts}${html}</div>
+	  <div id="content">${html}</div>
 	  </div>
 	  <script>
 	  document.getElementById('download').addEventListener('click', function() {
