@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
+
   // Handle boolean cell replacements, ensuring we target only td elements
   var booleanCells = document.querySelectorAll('td.v88-boolean');
   booleanCells.forEach(function(cell) {
