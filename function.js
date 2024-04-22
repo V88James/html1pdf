@@ -23,9 +23,101 @@ window.function = function (html, fileName, format, zoom, orientation, margin, b
 	buttonBgHover = buttonBgHover.value ?? "#f5f5f5";
 	buttonFontColourDownloading = buttonFontColourDownloading.value ?? "#FF3F69";
 	buttonFontColourDone = buttonFontColourDone.value ?? "#00AC8E";
+
+	// V88 STYLES
+
+	v88Styles =
+	'
+	<style>
 	
+	body
+	{
+	  font-family: Arial, sans-serif;
+	}
+	
+	table
+	{
+	  width: 100%;
+	}
+	
+	table td:first-child
+	{
+	  width: 30%;
+	  background-color: #f2f2f2;
+	}
+	
+	table td:not(:first-child)
+	{
+	  width: 70%;
+	}
+	
+	td
+	{
+	  padding: 5px;
+	  white-space: pre-wrap;
+	}
+	
+	td, th {
+	  vertical-align: top;
+	  text-align: left;
+	}
+	
+	table, th, td
+	{
+	  border: 1px solid black;
+	  border-collapse: collapse;
+	}
+	 
+	.v88-no-break
+	{
+	}
+	
+	.v88-title-strip {
+	    display: flex;
+	    justify-content: space-between;
+	    align-items: flex-start;
+	}
+	
+	.v88-title-text {
+	    flex-grow: 1;
+	}
+	
+	.v88-title-images {
+	    display: flex;
+	    align-items: flex-start;
+	}
+	
+	.v88-title-images img {
+	    max-height: 100px;
+	    width: auto; images */
+	}
+	
+	</style>
+	';
 
+	// V88 SCRIPTS
 
+	v88Scripts =
+	'
+	<script>
+
+	document.addEventListener('DOMContentLoaded', function() {var booleanCells = document.querySelectorAll('.v88-boolean');
+    	booleanCells.forEach(function(cell)
+	{
+      		var text = cell.textContent.trim().toLowerCase();
+      		if (text === 'true')
+		{
+        		cell.textContent = '✓';
+      		}
+		else
+		{
+        		cell.textContent = '✕'; // Covers 'false', empty, and any unexpected values
+      		}
+    		});
+  	});
+	</script>		
+	';
+		
 	// DOCUMENT DIMENSIONS
 	const formatDimensions = {
 		a0: [4967, 7022],
@@ -145,7 +237,7 @@ window.function = function (html, fileName, format, zoom, orientation, margin, b
 	  <div class="header">
 		<button class="button" id="download">Download</button>
 	  </div>
-	  <div id="content">${html}</div>
+	  <div id="content">${v88-styles}${v88-scripts}${html}</div>
 	  </div>
 	  <script>
 	  document.getElementById('download').addEventListener('click', function() {
