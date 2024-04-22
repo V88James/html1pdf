@@ -1,0 +1,61 @@
+body
+  {
+    font-family: Arial, sans-serif;
+  }
+
+  table
+  {
+    width: 100%;
+  }
+
+  table td:first-child
+  {
+    width: 30%;
+    background-color: #f2f2f2;
+  }
+
+  table td:not(:first-child)
+  {
+    width: 70%;
+  }
+
+  td
+  {
+    padding: 5px;
+    white-space: pre-wrap;
+  }
+
+  td, th {
+    vertical-align: top;
+    text-align: left;
+  }
+
+  table, th, td
+  {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+ 
+  .v88-no-break
+  {
+  }
+
+.v88-title-strip {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.v88-title-text {
+    flex-grow: 1;
+}
+
+.v88-title-images {
+    display: flex;
+    align-items: flex-start;
+}
+
+.v88-title-images img {
+    max-height: 100px;
+    width: auto; images */
+}
