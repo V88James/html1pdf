@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var cells = document.querySelectorAll('.v88-hide-empty');
     cells.forEach(function(cell) {
       if (cell.textContent.trim() === '') {
-        cell.parentNode.style.display = 'none';
+        row.style.display = 'none';
       }
     });
   });
