@@ -1,5 +1,6 @@
 .makeshiftbody {
   background-color: red !important;
+  border: 1px solid green;
 }
 
 table
