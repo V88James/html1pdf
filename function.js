@@ -90,7 +90,8 @@ window.function = function (html, fileName, format, zoom, orientation, margin, b
 
 	const customCSS = `
 	body {
-	  margin: 0!important;
+	  margin: 10px !important;
+   	  background-color: white !important;
 	}
   
 	button#download {
