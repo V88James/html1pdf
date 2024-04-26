@@ -1,7 +1,4 @@
-.makeshiftbody {
-  background-color: red !important;
-  border: 1px solid green;
-}
+
 
 table
 {
@@ -57,5 +54,9 @@ table, th, td
 
 .v88-title-images img {
     max-height: 100px;
-    width: auto; images */
+    width: auto;
+}
+.makeshiftbody {
+  background-color: red !important;
+  border: 1px solid green;
 }
